@@ -9,6 +9,13 @@ gem 'mongoid','3.0.6'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+
+
+gem 'thin'
+
+gem 'devise'
+gem 'devise-encryptable'
+gem 'cancan'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
