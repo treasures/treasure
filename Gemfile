@@ -12,6 +12,7 @@ gem "twitter-bootstrap-rails"
 
 
 gem 'thin'
+gem 'unicorn'
 
 gem 'devise'
 gem 'devise-encryptable'
