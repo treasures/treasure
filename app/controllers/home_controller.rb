@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  before_filter :authenticate_user!
+  layout "welcome_layout"
   def index
+    @courses = Course.paginate(:page => params[:page],:per_page => 15 )
   end
 end

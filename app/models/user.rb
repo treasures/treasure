@@ -10,6 +10,7 @@ class User
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""
+  field :user_name,          :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
   field :password_salt,      :type => String, :default => ""
 
@@ -44,4 +45,6 @@ class User
 
   ## Token authenticatable
   field :authentication_token, :type => String
+  
+  embeds_many :comments
 end

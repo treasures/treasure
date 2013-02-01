@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @journal.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @journal.author.try(:email) %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @journal.content %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @journal.tags %>
+</p>
+
+
+<%= link_to 'Edit', edit_journal_path(@journal) %> |
+<%= link_to 'Back', journals_path %>

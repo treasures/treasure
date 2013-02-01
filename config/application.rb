@@ -6,6 +6,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
+
 # require "rails/test_unit/railtie"
 
 if defined?(Bundler)
@@ -15,6 +16,18 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+
+#ActionView::Base.field_error_proc = Proc.new do |html_tag, instance| 
+#  error_html = <<-RUBY
+#  <div class="control-group error">
+#    <div class="controls">
+#      <span class="help-inline">#{html_tag}</span>
+#    </div>
+#  </div>
+#  RUBY
+#  error_html.html_safe
+#end
+
 module Treasure
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -23,7 +36,9 @@ module Treasure
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
-
+    config.autoload_paths += %W(#{Rails.root.join}/lib)
+    config.autoload_paths += %W(#{Rails.root.join}/lib/mongoid)
+    
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]

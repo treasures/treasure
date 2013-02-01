@@ -13,6 +13,7 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag :defaults %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -33,43 +34,63 @@
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
-    <style>
-    .brand-user {
-      float: right;
-      display: block;
-      padding: 10px 20px 10px;
-      margin-left: -20px;
-      font-weight: 200;
-      color: #777777;
-      text-shadow: 0 1px 0 #ffffff;
-    }
-    </style>
+
   </head>
   <body>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Treasure</a>
-          <% if user_signed_in? %>         
-          <%= link_to "注销", {:controller => "devise/sessions",:action => "destroy"},:method => :delete, class: "brand-user"%>
-          <% end %>
-          <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Posts",posts_path  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
+          <div class="navbar">
+                        <div class="navbar-inner">
+                          <div class="container">
+                            <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                            </a>
+                            <a href="#" class="brand">Title</a>
+                            <div class="nav-collapse collapse navbar-responsive-collapse">
+                              <ul class="nav">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                                <li class="dropdown">
+                                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Nav header</li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                  </ul>
+                                </li>
+                              </ul>
+                              <form action="" class="navbar-search pull-left">
+                                <input type="text" placeholder="Search" class="search-query span2">
+                              </form>
+                              <ul class="nav pull-right">
+                                <li>          <% if user_signed_in? %>         
+          <%= link_to "注销", destroy_user_session_url,:method => :delete %>
+          <% else %>
+          <%= link_to "登陆", new_user_session_path%>
+          <% end %></li>
+                                <li class="divider-vertical"></li>
+                                <li class="dropdown">
+                                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div><!-- /.nav-collapse -->
+                          </div>
+                        </div><!-- /navbar-inner -->
+                      </div>
     </div><p style="height:40px"></p>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= bootstrap_flash %>
     <div class="container">
         <div class="row">
           <div class="span9">

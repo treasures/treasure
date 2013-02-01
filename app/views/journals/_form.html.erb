@@ -1,0 +1,35 @@
+<%= simple_form_for(@journal,:html => {:class => "form-horizontal"}) do |f| %>
+  <% if @journal.errors.any? %>
+    <div class="bs-docs-example">
+      <div class="alert alert-error">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <strong><%= pluralize(@journal.errors.count, "error") %> prohibited this journal from being saved:</strong>
+        
+        <ul>
+          <% @journal.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <%= f.input :title %>
+  
+  <%= f.input :content, as: :text, input_html: { rows: 8 } %>
+  
+  <%= f.input :tags %>
+  
+  <%= f.input :is_public , as: :radio %>
+  
+  <div class="control-group">
+  <div class="controls">
+  
+  <%= f.button :submit %>
+  </div>
+  </div>
+
+<% end %>
+
+
+

@@ -1,0 +1,73 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Template · Bootstrap</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <!-- Le styles -->
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow &gt; hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    </head>
+
+  <body>
+  <div class="container-narrow">
+
+    <div class="masthead">
+      <ul class="nav nav-pills pull-right">
+        <li class="active"><%= link_to "Home","/" %></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>     
+      </ul>
+      <h3 class="muted">Project name</h3>
+    </div>
+
+    <hr>
+
+   <%= yield %>
+
+    <hr>
+
+    <div class="footer">
+      <p>&copy; Company 2012</p>
+    </div>
+
+  </div> <!-- /container -->
+    
+  </body>
+</html>

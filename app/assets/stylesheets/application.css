@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+ .navbar {
+     position: fixed;
+     width: 100%;
+		 }

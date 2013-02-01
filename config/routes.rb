@@ -1,13 +1,18 @@
 Treasure::Application.routes.draw do
+
+
   get "home/index"
 
-  root :to => "home#index"
-  devise_for :users,:controller => {:sessions => "users/sessions"}
+  devise_for :users,:module => :users,:controller => {:sessions => "users/sessions",:registrations => "users/registrations"}
   #devise_for :users, :path => "devise", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
   resources :posts
+  resources :courses
+  resources :journals
   authenticated do
     root :to => 'posts#index'
   end
+
+  root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

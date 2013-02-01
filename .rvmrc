@@ -1,1 +1,1 @@
-rvm use ruby-1.9.3-p327-falcon  gemset use treasure
+rvm use ruby-1.9.3-p327-falcon && rvm  gemset use treasure

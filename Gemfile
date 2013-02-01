@@ -20,7 +20,21 @@ gem 'cancan'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'will_paginate', '3.0.2'
+gem 'bootstrap-will_paginate'
 
+#redis
+gem 'redis'
+
+#simple form
+gem 'simple_form'
+
+#debug
+gem 'debugger', group: [:development, :test]
+#gem 'linecache19','0.5.12'
+#gem 'ruby-debug-base19','0.11.25'
+#gem 'ruby-debug19','0.11.6',:require => "ruby-debug"
+#gem 'ruby-debug-ide19'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,6 +50,10 @@ end
 
 gem 'jquery-rails'
 
+group :development do
+  gem "hirb"
+  gem "wirble"
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
